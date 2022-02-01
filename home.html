@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Clasificacion de vinos</title>
+    <title>Detección Cáncer de Mama</title>
 </head>
 
 <body>
@@ -23,109 +23,235 @@
                 </li>
             </ul>
     </nav>
-    <div class="container">
+    <div class="container" >
         <h1 style="text-align: center;">Detección Cáncer de Mama</h1>
         <br>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="background-image:url(./cancer2.png);">
                         <form>
 
 
                             <div class="form row">
                                 <div class="form-group col-md-4">
-                                    <label for=" Alcohol"> Alcohol</label>
-                                    <input type="number" class="form-control" id="alcohol" placeholder="Alcohol">
+                                    <label for=" Radio media"> Radio media</label>
+                                    <input type="number"  min= 0 class="form-control" id="radiomedia" placeholder="Radio media" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for=" Ácido málico"> Ácido málico</label>
-                                    <input type="number" class="form-control" id="acido" placeholder="Ácido málico">
+                                    <label for=" Textura media"> Textura media</label>
+                                    <input type="number"  min= 0 class="form-control" id="texturamedia" placeholder="Textura media" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="Ceniza"> Ceniza</label>
-                                    <input type="number" class="form-control" id="ceniza" placeholder="Ceniza">
-                                </div>
-                            </div>
-
-                            <div class="form row">
-                                <div class="form-group col-md-4">
-                                    <label for="Alcalinidad "> Alcalinidad </label>
-                                    <input type="number" class="form-control" id="alcalinidad"
-                                        placeholder="Alcalinidad">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for=" Magnesio"> Magnesio</label>
-                                    <input type="number" class="form-control" id="magnesio" placeholder="Magnesio">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="Fenoles"> Fenoles</label>
-                                    <input type="number" class="form-control" id="fenoles" placeholder="Fenoles">
+                                    <label for="Perimetro media">Perimetro media</label>
+                                    <input type="number"  min= 0 class="form-control" id="perimetromedia" placeholder="Perimetro" required>
                                 </div>
                             </div>
 
                             <div class="form row">
                                 <div class="form-group col-md-4">
-                                    <label for="Flavanoides"> Flavanoides</label>
-                                    <input type="number" class="form-control" id="flavanoides"
-                                        placeholder="Flavanoides">
+                                    <label for="Superficie media "> Superficie media </label>
+                                    <input type="number" min= 0 class="form-control" id="superficiemedia"
+                                        placeholder="Superficie" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="Fenoles no flavonoides">No flavonoides</label>
-                                    <input type="number" class="form-control" id="noflavonoides"
-                                        placeholder="No flavonoides">
+                                    <label for=" Suavidad media"> Suavidad media</label>
+                                    <input type="number"  min= 0 class="form-control" id="suavidadmedia" placeholder="Suavidad"
+                                    required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="Proantocianinas"> Proantocianinas</label>
-                                    <input type="number" class="form-control" id="proantocianina"
-                                        placeholder="Proantocianinas">
+                                    <label for="Compacidad media"> Compacidad media</label>
+                                    <input type="number" min= 0 class="form-control" id="compacidadmedia" placeholder="Compacidad"
+                                    required>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for=" Color"> Color</label>
-                                    <input type="number" class="form-control" id="color" placeholder="Color">
-                                </div>
+                            </div>
 
+                            <div class="form row">
                                 <div class="form-group col-md-4">
-                                    <label for=" Tono">Tono</label>
-                                    <input type="number" class="form-control" id="tono" placeholder="Tono">
+                                    <label for="Concavidad media"> Concavidad media</label>
+                                    <input type="number" min= 0 class="form-control" id="concavidadmedia"
+                                        placeholder="Concavidad" required>
                                 </div>
-
                                 <div class="form-group col-md-4">
-                                    <label for="OD280/OD315 "> OD280/OD315</label>
-                                    <input type="number" class="form-control" id="od" placeholder="OD280/OD315">
+                                    <label for="Puntos concavos media">Puntos concavos</label>
+                                    <input type="number" min= 0 class="form-control" id="puntosconcavosmedia"
+                                        placeholder="Puntos" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="Simetria media"> Simetria media</label>
+                                    <input type="number" min= 0 class="form-control" id="simetriamedia"
+                                        placeholder="Simetria media" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" Dimension fractal media"> Dimension fractal</label>
+                                    <input type="number" min= 0 class="form-control" id="dimensionfractalmedia" placeholder="Dimension"
+                                    required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" Radio error"> Radio error</label>
+                                    <input type="number" min= 0 class="form-control" id="radioerror" placeholder="Radio error"
+                                    required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" Textura error"> Textura error</label>
+                                    <input type="number" min= 0 class="form-control" id="texturaerror" placeholder="Textura error"
+                                    required>
                                 </div>
 
 
                             </div>
 
+                            <!-- variables para error -->
+
                             <div class="form row">
+                                
                                 <div class="form-group col-md-4">
-                                    <label for="Prolina "> Prolina </label>
-                                    <input type="number" class="form-control" id="prolina " placeholder="Prolina ">
-                                   
+                                    <label for="Perimetro error">Perimetro error</label>
+                                    <input type="number" min= 0 class="form-control" id="perimetroerror" placeholder="Perimetro"
+                                    required>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="Superficie error "> Superficie error </label>
+                                    <input type="number" min= 0 class="form-control" id="superficieerror"
+                                        placeholder="Superficie"
+                                        required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" Suavidad error"> Suavidad error</label>
+                                    <input type="number" min= 0 class="form-control" id="suavidaderror" placeholder="Suavidad"
+                                    required>
                                 </div>
                             </div>
 
                       
-                            <div>
-                                <button class="btn btn-success" id="predecir" type="button">Predecir</button>
-                            </div>
-                            <br>
-                            <div style="text-align: center; height: 50% ; font-weight: bolder; font: size 100px; color: crimson;" id="resultado"></div>
+                            
                         </form>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="card">
-                    <div class="card-body">
-                        <center>
-                            <img src="cancer2.png" alt="" width="450" height="300" srcset="">
-                        </center>
+                    <div class="card-body"  style="background-image: url(./cancer2.png);">
+                        <div class="form row">
+                              
+                            <div class="form-group col-md-4">
+                                <label for="Compacidad error"> Compacidad error</label>
+                                <input type="number" min= 0 class="form-control" id="compacidaderror" placeholder="Compacidad"
+                                required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Concavidad media"> Concavidad error</label>
+                                <input type="number" min= 0 class="form-control" id="concavidaderror"
+                                    placeholder="Concavidad"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Puntos concavos error">Puntos concavos</label>
+                                <input type="number" min= 0 class="form-control" id="puntosconcavoserror"
+                                    placeholder="Puntos"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form row">
+                           
+                            <div class="form-group col-md-4">
+                                <label for="Simetria error"> Simetria error</label>
+                                <input type="number" min= 0 class="form-control" id="simetriaerror"
+                                    placeholder="Simetria error"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for=" Dimension fractal error"> Dimension fractal</label>
+                                <input type="number" min= 0 class="form-control" id="dimensionfractalerror" placeholder="Dimension"
+                                required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for=" Radio peor"> Radio peor</label>
+                                <input type="number" min= 0 class="form-control" id="radiopeor" placeholder="Radio peor"
+                                required>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form row">
+                           
+                            <div class="form-group col-md-4">
+                                <label for=" Textura peor"> Textura peor</label>
+                                <input type="number" min= 0 class="form-control" id="texturapeor" placeholder="Textura peor"
+                                required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Perimetro error">Perimetro peor</label>
+                                <input type="number" min= 0 class="form-control" id="perimetropeor" placeholder="Perimetro"
+                                required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Superficie peor"> Superficie peor </label>
+                                <input type="number" min= 0 class="form-control" id="superficiepeor"
+                                    placeholder="Superficie"
+                                    required>
+
+                            </div>
+                        </div>
+
+                        <div class="form row">
+                            
+                            <div class="form-group col-md-4">
+                                <label for=" Suavidad peor"> Suavidad peor</label>
+                                <input type="number" min= 0 class="form-control" id="suavidadpeor" placeholder="Suavidad"
+                                required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Compacidad peor"> Compacidad peor</label>
+                                <input type="number" min= 0 class="form-control" id="compacidadpeor" placeholder="Compacidad"
+                                required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Concavidad peor"> Concavidad peor</label>
+                                <input type="number" min= 0 class="form-control" id="concavidadpeor"
+                                    placeholder="Concavidad"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form row">
+                            
+                            <div class="form-group col-md-4">
+                                <label for="Puntos concavos peor">Puntos concavos</label>
+                                <input type="number" min= 0 class="form-control" id="puntosconcavospeor"
+                                    placeholder="Puntos"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Simetria peor"> Simetria peor</label>
+                                <input type="number" min= 0 class="form-control" id="simetriapeor"
+                                    placeholder="Simetria peor"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for=" Dimension fractal peor"> Dimension fractal</label>
+                                <input type="number" min= 0 class="form-control" id="dimensionfractalpeor" placeholder="Dimension"
+                                required>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+        <div style="display: block; text-align: center;">
+            <button class="btn btn-primary" id="predecir" type="button" style="width: 20em;">Predecir</button>
+        </div>
+        <br>
+        <div style="text-align: center; height: 50% ; font-weight: bolder; font: size 100px; color: crimson;" id="resultado"></div>
 
 
     </div>
@@ -144,19 +270,38 @@
     <script type="text/javascript">
         var modelo = null;
         const botonPredecir = document.getElementById("predecir");
-        const alcohol = document.getElementById("alcohol");
-        const acido = document.getElementById("acido");
-        const ceniza = document.getElementById("ceniza"); 
-        const alcalinidad = document.getElementById("magnesio");
-        const magnesio = document.getElementById("alcohol");
-        const fenoles = document.getElementById("fenoles");
-        const flavanoides = document.getElementById("flavanoides");
-        const noflavanoides = document.getElementById("noflavonoides");
-        const proantocianina = document.getElementById("proantocianina");
-        const color = document.getElementById("color");
-        const tono = document.getElementById("tono");
-        const od = document.getElementById("od");
-        const prolina = document.getElementById("alcohol");
+        const radiomedia = document.getElementById("radiomedia");
+        const texturamedia = document.getElementById("texturamedia");
+        const perimetromedia = document.getElementById("perimetromedia"); 
+        const superficiemedia = document.getElementById("superficiemedia");
+        const suavidadmedia = document.getElementById("suavidadmedia");
+        const compacidadmedia = document.getElementById("compacidadmedia");
+        const concavidadmedia = document.getElementById("concavidadmedia");
+        const puntosconcavosmedia = document.getElementById("puntosconcavosmedia");
+        const simetriamedia = document.getElementById("simetriamedia");
+        const dimensionfractalmedia = document.getElementById("dimensionfractalmedia");
+        const radioerror = document.getElementById("radioerror");
+        const texturaerror = document.getElementById("texturaerror");
+        const perimetroerror = document.getElementById("perimetroerror"); 
+        const superficieerror = document.getElementById("superficieerror");
+        const suavidaderror = document.getElementById("suavidaderror");
+        const compacidaderror = document.getElementById("compacidaderror");
+        const concavidaderror = document.getElementById("concavidaderror");
+        const puntosconcavoserror = document.getElementById("puntosconcavoserror");
+        const simetriaerror= document.getElementById("simetriaerror");
+        const dimensionfractalerror = document.getElementById("dimensionfractalerror");
+        // variables para el tipo peor
+        const radiopeor = document.getElementById("radiopeor");
+        const texturapeor = document.getElementById("texturapeor");
+        const perimetropeor = document.getElementById("perimetropeor"); 
+        const superficiepeor= document.getElementById("superficiepeor");
+        const suavidadpeor= document.getElementById("suavidadpeor");
+        const compacidadpeor = document.getElementById("compacidadpeor");
+        const concavidadpeor = document.getElementById("concavidadpeor");
+        const puntosconcavopeor = document.getElementById("puntosconcavopeor");
+        const simetriapeor= document.getElementById("simetriapeor");
+        const dimensionfractalpeor = document.getElementById("dimensionfractalpeor");
+        
 
         (async () => {
             console.log("Cargando modelo...");
@@ -171,11 +316,10 @@
             console.log(modelo)
             if (modelo != null) {
                 console.log("entro en el if")
-                arr = [parseFloat(alcohol.value),parseFloat(acido.value), 
-                parseFloat(ceniza.value), parseFloat(alcalinidad.value), parseFloat(magnesio.value),
-            parseFloat(fenoles.value) , parseFloat(flavanoides.value) , parseFloat(noflavanoides.value),
-        parseFloat(proantocianina.value),parseFloat(color.value) ,parseFloat(tono.value),
-    parseFloat(od.value) ,parseFloat(prolina.value)]
+                arr = [parseFloat(radiomedia.value),parseFloat(texturamedia.value), 
+                parseFloat(perimetromedia.value), parseFloat(superficiemedia.value), parseFloat(suavidadmedia.value),
+            parseFloat(compacidadmedia.value) , parseFloat(concavidadmedia.value) , parseFloat(puntosconcavosmedia.value),
+        parseFloat(simetriamedia.value),parseFloat(dimensionfractalmedia.value) ,]
                 var tensor = tf.tensor(arr, [1, 13])
                 var prediccion = modelo.predict(tensor).dataSync();
                 console.log(tensor)
@@ -189,8 +333,8 @@
                     }
 
                 }
-                console.log(alcohol.value)
-                console.log(acido.value)
+                console.log(radiomedia.value)
+                console.log(texturamedia.value)
 
                 document.getElementById("resultado").innerHTML = "Las caracteristicas de los datos ofrecidos pertenecen a la Clase de vino " + clase_tipo;
             } else {
@@ -198,7 +342,7 @@
             }
         }
 
-        botonPredecir.onclick = predecir
+        // botonPredecir.onclick = predecir
 
 
 
