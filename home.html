@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="estilos.css">
     <title>Detección Cáncer de Mama</title>
 </head>
 
@@ -30,7 +31,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
-                    <div class="card-body" style="background-image:url(./cancer3.png);">
+                    <div class="card-body" style="background-image:url(./cancer4.jpg);">
                         <form>
 
 
@@ -135,7 +136,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="card">
-                    <div class="card-body" style="background-image: url(./cancer3.png);">
+                    <div class="card-body" style="background-image: url(./cancer3.jpg)">
                         <div class="form row">
 
                             <div class="form-group col-md-4">
@@ -248,7 +249,9 @@
         </div>
         <br>
         <div style="text-align: center; height: 50% ; font-weight: bolder; font: size 100px; color: crimson;"
-            id="resultado"></div>
+            id="resultado">
+            
+        </div>
 
 
     </div>
@@ -324,8 +327,28 @@
             return lista_normalizado
         }
 
+        function ValidarCampos(){
+          if (radiomedia.value == '' || texturamedia.value== ''
+          || perimetromedia.value == '' || suavidadmedia.value == ''||
+          compacidadmedia.value== '' || concavidadmedia.value == '' || puntosconcavosmedia.value == ''||
+          simetriamedia.value == '' || dimensionfractalmedia.value == '' || radioerror.value ==''||
+          texturaerror.value == '' || perimetroerror.value== '' || superficiemedia.value == '' ||
+          superficieerror.value == '' || suavidaderror.value == '' || compacidaderror.value == ''
+          || concavidaderror.value == '' || puntosconcavoserror.value == '' || simetriaerror.value == ''||
+          dimensionfractalerror.value== '' || radiopeor.value == '' || texturapeor.value == ''||
+          perimetropeor.value == '' || superficiepeor.value == '' || suavidadpeor.value == '' ||
+          compacidadpeor.value == '' || concavidadpeor.value == '' || puntosconcavopeor.value == ''||
+          simetriapeor.value == '' || dimensionfractalpeor.value == '') {
+           return True
+          } 
+          return False
+        }
+
         function predecir() {
             console.log(modelo)
+           if (ValidarCampos) {
+               alert("Debe llenar todos los campos")
+           } else {
             if (modelo != null) {
                 
 
@@ -367,10 +390,21 @@
                 console.log(radiomedia.value)
                 console.log(texturamedia.value)
 
-                document.getElementById("resultado").innerHTML = "Tipo de Cáncer es " + tipoCancer;
+                if (tipoCancer == "Benigno") {
+                    document.getElementById("resultado").innerHTML = " Tipo de Cáncer es " + tipoCancer + `<br>`
+                +`<img src="./benigno.jpg" alt="" srcset="">`;
+                } else {
+                    document.getElementById("resultado").innerHTML = " Tipo de Cáncer es " + tipoCancer + `<br>`
+                +`<img src="./maligno.jpg" alt="" srcset="">`;
+                }
+
+               
             } else {
                 document.getElementById("resultado").innerHTML = "Intenta de nuevo en un momento...";
             }
+           }
+          //
+        
         }
 
          botonPredecir.onclick = predecir
