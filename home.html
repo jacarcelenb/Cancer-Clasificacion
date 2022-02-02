@@ -231,7 +231,7 @@
                                 <input type="number" min=0 class="form-control" id="simetriapeor"
                                     placeholder="Simetria peor" required>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-4" >
                                 <label for=" Dimension fractal peor"> Dimension fractal</label>
                                 <input type="number" min=0 class="form-control" id="dimensionfractalpeor"
                                     placeholder="Dimension" required>
@@ -245,7 +245,9 @@
         </div>
         <br>
         <div style="display: block; text-align: center;">
-            <button class="btn btn-primary" id="predecir" type="button" style="width: 20em;">Predecir</button>
+            <button class="btn btn-primary" id="predecir" type="button" style="width: 10em;">Predecir</button>
+            <button class="btn btn-success" id="limpiar" type="button" style="width: 10em;">Limpiar</button>
+            <button class="btn btn-danger" id="inicializar" type="button" style="width: 10em;">Inicializar</button>
         </div>
         <br>
         <div style="text-align: center; height: 50% ; font-weight: bolder; font: size 100px; color: crimson;"
@@ -301,6 +303,8 @@
         const puntosconcavopeor = document.getElementById("puntosconcavospeor");
         const simetriapeor = document.getElementById("simetriapeor");
         const dimensionfractalpeor = document.getElementById("dimensionfractalpeor");
+        const botonLimpiar = document.getElementById("limpiar");
+        const botonInicializar = document.getElementById("inicializar");
 
 
         (async () => {
@@ -339,19 +343,92 @@
           perimetropeor.value == '' || superficiepeor.value == '' || suavidadpeor.value == '' ||
           compacidadpeor.value == '' || concavidadpeor.value == '' || puntosconcavopeor.value == ''||
           simetriapeor.value == '' || dimensionfractalpeor.value == '') {
-           return True
-          } 
-          return False
+              return true
+          }else{
+            return false
+          }
+         
+     
         }
+
+        function inicializarDatos (){
+            radiomedia.value = 1.56
+            texturamedia.value = 2.67
+            perimetromedia.value = 3.67
+            superficiemedia.value = 6.78
+            suavidadmedia.value = 3.45
+            compacidadmedia.value = 9.87
+            concavidadmedia.value = 18.5
+            puntosconcavosmedia.value = 5.67
+            simetriamedia.value = 4.78
+            dimensionfractalmedia.value = 10.5
+            radioerror.value = 12.4
+            texturaerror.value = 9.6
+            perimetroerror.value= 24.6
+            superficieerror.value = 11.7
+            suavidaderror.value = 5.6
+            compacidaderror.value = 4.8
+            concavidaderror.value = 5.8
+            puntosconcavoserror.value = 16.4
+            simetriaerror.value = 15.2
+            dimensionfractalerror.value = 11.4
+            radiopeor.value = 8.4
+            texturapeor.value = 6.43
+            perimetropeor.value = 4.7
+            superficiepeor.value = 6.78
+            suavidadpeor.value= 42.8
+            compacidadpeor.value = 5.9
+            concavidadpeor.value = 14.5
+            puntosconcavopeor.value = 9.4
+            simetriapeor.value = 3.7
+            dimensionfractalpeor.value= 3.6
+        }
+
+        function LimpiarDatos (){
+            radiomedia.value = ''
+            texturamedia.value = ''
+            perimetromedia.value = ''
+            superficiemedia.value = ''
+            suavidadmedia.value = ''
+            compacidadmedia.value = ''
+            concavidadmedia.value = ''
+            puntosconcavosmedia.value = ''
+            simetriamedia.value = ''
+            dimensionfractalmedia.value = ''
+            radioerror.value = ''
+            texturaerror.value = ''
+            perimetroerror.value= ''
+            superficieerror.value = ''
+            suavidaderror.value = ''
+            compacidaderror.value = ''
+            concavidaderror.value = ''
+            puntosconcavoserror.value =''
+            simetriaerror.value = ''
+            dimensionfractalerror.value = ''
+            radiopeor.value = ''
+            texturapeor.value = ''
+            perimetropeor.value = ''
+            superficiepeor.value = ''
+            suavidadpeor.value= ''
+            compacidadpeor.value = ''
+            concavidadpeor.value = ''
+            puntosconcavopeor.value = ''
+            simetriapeor.value = ''
+            dimensionfractalpeor.value= ''
+        }
+
+
+       
 
         function predecir() {
             console.log(modelo)
-           if (ValidarCampos) {
+            console.log(radiomedia.value)
+            console.log(ValidarCampos)
+           if (ValidarCampos()) {
                alert("Debe llenar todos los campos")
            } else {
             if (modelo != null) {
                 
-
 
                 arr = [parseFloat(radiomedia.value), parseFloat(texturamedia.value),
                 parseFloat(perimetromedia.value), parseFloat(superficiemedia.value), parseFloat(suavidadmedia.value),
@@ -382,7 +459,7 @@
 
                 }
 
-                if (clase_tipo == 0 && prediccion[0] == 1) {
+                if (prediccion[0] >= 0  && prediccion[0] < 1) {
                     tipoCancer = "Benigno"
                 } else {
                     tipoCancer = "Maligno"
@@ -392,10 +469,10 @@
 
                 if (tipoCancer == "Benigno") {
                     document.getElementById("resultado").innerHTML = " Tipo de Cáncer es " + tipoCancer + `<br>`
-                +`<img src="./benigno.jpg" alt="" srcset="">`;
+                +`<img src="./benigno.jpg" style="width: 15em; height: 15em;" alt="" srcset="">`;
                 } else {
                     document.getElementById("resultado").innerHTML = " Tipo de Cáncer es " + tipoCancer + `<br>`
-                +`<img src="./maligno.jpg" alt="" srcset="">`;
+                +`<img src="./maligno.jpg" style="width: 15em; height: 15em;" alt="">`;
                 }
 
                
@@ -408,6 +485,8 @@
         }
 
          botonPredecir.onclick = predecir
+         botonInicializar.onclick = inicializarDatos
+         botonLimpiar.onclick = LimpiarDatos
 
 
 
